@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - Book Store</title>
+    <title>Admin Login - BooksTower</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background: #f8f9fa;
         }
-        .login-container {
+        .login-container {  
             max-width: 400px;
             margin: 100px auto;
             padding: 30px;
@@ -46,7 +46,7 @@
     <div class="container">
         <div class="login-container">
             <div class="login-logo">
-                <img src="../clients/assets/logo/logo111.png" alt="Logo">
+                <img src="../clients/assets/logo/logoBooks.png" alt="Logo">
             </div>
             <h4 class="text-center mb-4">Đăng nhập quản trị</h4>
             
