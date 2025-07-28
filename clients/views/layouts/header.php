@@ -5,11 +5,11 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="" sizes="16x16" href="clients/assets/logo/logo111.png">
+    <link rel="icon" type="" sizes="16x16" href="clients/assets/logo/logo.png">
     <title>StoreBook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" href="assets/logo/logo111.png">
-    <link rel="shortcut icon" href="assets/logo/logo111.png">
+    <link rel="apple-touch-icon" href="assets/logo/logo.png">
+    <link rel="shortcut icon" href="assets/logo/logo.png">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
@@ -48,8 +48,8 @@
         <div class="header-modern-mainbar row align-items-center py-3 px-xl-5 mx-0">
             <div class="col-lg-3 col-12 text-center text-lg-left mb-2 mb-lg-0">
                 <a href="./" class="header-logo-link d-inline-flex align-items-center">
-                    <img src="clients/assets/logo/logo111.png" alt="Logo" class="header-logo-img mr-2" style="height: 64px;">
-                    <span class="header-logo-text font-weight-bold text-primary" style="font-size: 2rem; letter-spacing: 1px;">StoreBook</span>
+                    <img src="clients/assets/logo/logo.png" alt="Logo" class="header-logo-img mr-2" style="height: 64px;">
+                    <span class="header-logo-text font-weight-bold text-primary" style="font-size: 2rem; letter-spacing: 1px;">BooksTower</span>
                 </a>
             </div>
             <div class="col-lg-6 col-12 mb-2 mb-lg-0">
