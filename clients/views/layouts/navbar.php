@@ -26,7 +26,7 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
         <!-- Nút mở menu -->
         <button class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
             onclick="toggleMenu()"
-            style="height: 65px; margin-top: -1px; padding: 0 30px;">
+            style="height: 65px; margin-top: -1px; padding: 0 30px; border-radius: 0 30px 30px 0; color:#007bff; font-size: 1.15rem; font-weight: 600; letter-spacing: 1px;">
             <h6 class="font-weight-semi-bold m-0">Danh mục</h6>
             <i class="fa fa-angle-down"></i>
         </button>
@@ -219,7 +219,7 @@ function toggleMenu() {
   border: 1px solid #ddd;
   border-radius: 8px;
   min-width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(110, 70, 70, 0.1);
   padding: 10px 0;
   position: absolute;
   top: 100%;
@@ -276,4 +276,5 @@ function toggleMenu() {
     font-size: 14px;
   }
 }
+
 </style>

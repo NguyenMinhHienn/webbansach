@@ -5,13 +5,13 @@
         <div class="row pt-4 pb-2">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <a href="./" class="footer-logo-link d-flex align-items-center mb-3">
-                    <img src="clients/assets/logo/logo111.png" alt="Logo" class="footer-logo-img mr-2" style="height: 60px;">
-                    <span class="footer-logo-text font-weight-bold text-primary" style="font-size: 1.5rem;">StoreBook</span>
+                    <img src="clients/assets/logo/logo.png" alt="Logo" class="footer-logo-img mr-2" style="height: 60px;">
+                    <span class="footer-logo-text font-weight-bold text-primary" style="font-size: 1.5rem;">BooksTower</span>
                 </a>
                 <p class="footer-desc mb-3">Nền tảng mua sách trực tuyến hiện đại, đa dạng thể loại, giao hàng toàn quốc, hỗ trợ 24/7. Đọc sách mỗi ngày, mở rộng tri thức!</p>
                 <ul class="footer-contact list-unstyled mb-3">
                     <li class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i> 123 Đường Sách, TP. HCM</li>
-                    <li class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i> support@storebook.vn</li>
+                    <li class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i> support@bookstower.vn</li>
                     <li><i class="fa fa-phone-alt text-primary mr-2"></i> 1900 1234</li>
                 </ul>
                 <div class="footer-social d-flex align-items-center gap-2">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 mb-4">
-                <h5 class="footer-title mb-3">Về StoreBook</h5>
+                <h5 class="footer-title mb-3">Về BooksTower</h5>
                 <ul class="footer-links list-unstyled">
                     <li><a href="?act=/" class="footer-link">Trang chủ</a></li>
                     <li><a href="?act=sanpham" class="footer-link">Sản phẩm</a></li>
@@ -52,10 +52,10 @@
         </div>
         <div class="row border-top border-light py-3 mt-2 align-items-center">
             <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
-                <span class="footer-copyright">&copy; 2025 <a class="text-primary font-weight-bold" href="./">StoreBook</a>. All rights reserved.</span>
+                <span class="footer-copyright">&copy; 2025 <a class="text-primary font-weight-bold" href="./">BooksTower</a>. All rights reserved.</span>
             </div>
             <div class="col-md-6 text-center text-md-right">
-                <span class="footer-powered">Thiết kế bởi <a class="text-primary font-weight-bold" href="#">Nhóm StoreBook</a></span>
+                <span class="footer-powered">Thiết kế bởi <a class="text-primary font-weight-bold" href="https://www.facebook.com/minh.hien.90281">Nguyen Minh Hien</a></span>
             </div>
         </div>
     </div>
