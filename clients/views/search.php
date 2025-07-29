@@ -1,14 +1,14 @@
 <!-- Page Header Start -->
-<div class="container-fluid bg-secondary mb-5">
-    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Cửa hàng</h1>
-        <div class="d-inline-flex">
-            <p class="m-0"><a href="index.php">Trang chủ</a></p>
-            <p class="m-0 px-2">-</p>
-            <p class="m-0">Tìm kiếm</p>
-        </div>
+<div class="container-fluid shop-header mb-5 position-relative">
+    <div class="overlay"></div>
+    <div class="d-flex flex-column align-items-center justify-content-center text-white text-center" style="min-height: 300px; position: relative; z-index: 2;">
+        <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">📚 Cửa hàng sách & truyện</h1>
+        <a href="index.php" class="btn btn-outline-light px-4 py-2 animate__animated animate__fadeInUp">
+            <i class="fa fa-arrow-left me-2"></i> Về trang chủ
+        </a>
     </div>
 </div>
+
 
 <!-- Shop Content Start -->
 <div class="container-fluid pt-5">
@@ -24,7 +24,7 @@
                     <h6 class="font-weight-semi-bold mb-3">Danh mục</h6>
                     <select name="category_id" class="form-control">
                         <option value="">Tất cả danh mục</option>
-                        <?php foreach ($listdm as $dm): ?>
+                        <?php foreach ($listdm as $dm): ?>  
                             <option value="<?= $dm['id'] ?>"
                                 <?= (isset($_GET['category_id']) && $_GET['category_id'] == $dm['id']) ? 'selected' : '' ?>>
                                 <?= htmlspecialchars($dm['name']) ?>
@@ -283,4 +283,170 @@
         object-fit: cover;
         /* Cắt ảnh để vừa khung mà không bị méo */
     }
+</style>
+<!-- Nhúng animate.css nếu chưa có -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<style>
+:root {
+    --primary-color: #6C5CE7;    /* tím nhạt */
+    --secondary-color: #ffeaa7;  /* vàng nhạt */
+    --accent-color: #00cec9;     /* xanh biển */
+    --bg-light: #f8f9fa;
+    --text-dark: #2d3436;
+    --text-muted: #636e72;
+}
+
+/* ==== HEADER CỬA HÀNG ==== */
+.shop-header {
+    background: url('https://images.unsplash.com/photo-1600508771731-d7e29f649707?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+    position: relative;
+    border-radius: 0 0 30px 30px;
+}
+.shop-header .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(108, 92, 231, 0.7);
+    z-index: 1;
+}
+.shop-header .btn {
+    border-radius: 30px;
+}
+
+/* ==== NỘI DUNG TIÊU ĐỀ ==== */
+.shop-header h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.shop-header a.btn {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* ==== KHUNG BỘ LỌC ==== */
+.col-lg-3 {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+.col-lg-3 h6, .col-lg-3 h5 {
+    color: var(--primary-color);
+}
+.col-lg-3 select {
+    border-radius: 12px;
+    border: 1px solid #dfe6e9;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+.col-lg-3 select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(0, 206, 201, 0.3);
+}
+
+/* ==== NÚT LỌC ==== */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #5e54c6;
+}
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+/* ==== THẺ SẢN PHẨM ==== */
+.product-item {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.product-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+.product-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+.product-img:hover img {
+    transform: scale(1.05);
+}
+
+/* ==== GIÁ & TÊN ==== */
+.card-body h6 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+.card-body .text-danger {
+    color: #e17055 !important;
+}
+.card-body del {
+    font-size: 0.85rem;
+    color: #b2bec3;
+}
+
+/* ==== FOOTER SẢN PHẨM ==== */
+.card-footer {
+    background: var(--bg-light);
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+}
+.card-footer a {
+    font-weight: 500;
+    color: #0984e3;
+    transition: all 0.3s ease;
+}
+.card-footer a:hover {
+    color: #6c5ce7;
+    text-decoration: underline;
+}
+
+/* ==== PHÂN TRANG ==== */
+.pagination .page-link {
+    color: var(--primary-color);
+    border: 1px solid #ccc;
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+.pagination .page-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* ==== BADGE LỌC ==== */
+.badge {
+    font-size: 0.85rem;
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+.badge-primary {
+    background-color: var(--primary-color);
+}
+.badge-info {
+    background-color: var(--accent-color);
+}
+.badge-success {
+    background-color: #55efc4;
+}
+.badge-warning {
+    background-color: #fab1a0;
+}
 </style>
