@@ -1,11 +1,12 @@
 <!-- Page Header Start -->
-<div class="container-fluid bg-secondary mb-5">
+<div class="container-fluid store-header">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Cửa Hàng</h1>
-        <div class="d-inline-flex">
-            <p class="m-0"><a href="index.php">Trang chủ</a></p>
-            <p class="m-0 px-2">-</p>
-            <p class="m-0">Sản phẩm</p>
+        <h1>Cửa Hàng</h1>
+        <p class="welcome-text">Chào mừng bạn đến với thế giới mua sắm tuyệt vời của chúng tôi!</p>
+        <div class="d-inline-flex breadcrumb-links mt-3">
+            <p><a href="index.php">Trang chủ</a></p>
+            <p class="px-2">-</p>
+            <p>Sản phẩm</p>
         </div>
     </div>
 </div>
@@ -265,6 +266,86 @@ body, html {
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
+    .store-header {
+        background: linear-gradient(135deg, #3d6477ff, #5bade4ff); /* Gradient nền */
+        color: white;
+        border-radius: 15px;
+        padding: 60px 20px;
+        margin-bottom: 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .store-header h1 {
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #ffffff;
+        animation: fadeInDown 1s ease-out;
+    }
+
+    .store-header .breadcrumb-links p {
+        margin: 0;
+        font-size: 16px;
+        color: #ddd;
+        animation: fadeIn 1.5s ease-in;
+    }
+
+    .store-header .breadcrumb-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .store-header .breadcrumb-links a:hover {
+        color: #00c6ff;
+        text-decoration: underline;
+    }
+
+    .store-header .breadcrumb-links p.px-2 {
+        color: #bbb;
+    }
+
+    .store-header .welcome-text {
+        font-size: 20px;
+        font-weight: 400;
+        color: #f1f1f1;
+        margin-top: 10px;
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* Hiệu ứng */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
 /* Header */
 .container-fluid.bg-secondary {
     border-radius: 0 0 24px 24px;
