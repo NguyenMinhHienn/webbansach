@@ -6,7 +6,7 @@ if (!empty($sanphamCT)): ?>
             <div class="product-image-modern position-relative shadow-lg rounded-lg overflow-hidden">
                 <img id="product-image" class="w-100 h-100 img-fluid" src="<?= removeFirstChar($sanphamCT['image']) ?? '' ?>" alt="Image">
                 <?php if (!empty($sanphamCT['sale_value'])): ?>
-                    <span class="badge badge-sale-modern position-absolute"> 
+                    <span class="badge badge-sale-modern position-absolute">
                         <?php if ($sanphamCT['sale_value'] < 100): ?>
                             -<?= number_format($sanphamCT['sale_value'], 0) ?>%
                         <?php else: ?>
@@ -192,7 +192,8 @@ if (!empty($sanphamCT)): ?>
                             <div class="modern-card shadow-sm p-4 h-100">
                                 <h5 class="mb-3 text-warning font-weight-bold"><i class="far fa-star mr-2"></i>Danh sách đánh giá</h5>
                                 <?php
-                                function getRatingStars($ratingText) {
+                                function getRatingStars($ratingText)
+                                {
                                     $ratings = [
                                         'very_bad' => 1,
                                         'bad' => 2,
@@ -758,6 +759,61 @@ if (!empty($sanphamCT)): ?>
                 .product-title-modern { font-size: 1.1rem; }
             }
         </style>
+        <style>
+            /* Vùng chứa số lượng sản phẩm */
+            .quantity-modern {
+                display: flex;
+                align-items: center;
+                max-width: 150px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: #fff;
+            }
+
+            /* Nút + và - */
+            .btn-qty-modern {
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: #f0f0f0;
+                color: #333;
+                transition: background-color 0.2s, transform 0.2s;
+            }
+
+            .btn-qty-modern:hover {
+                background-color: #007bff;
+                color: #fff;
+                transform: scale(1.05);
+            }
+
+            /* Ô nhập số lượng */
+            .qty-input-modern {
+                width: 50px;
+                text-align: center;
+                border: none;
+                outline: none;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            /* Nút thêm vào giỏ */
+            .btn-gradient-modern {
+                background: linear-gradient(to right, #ff6a00, #ee0979);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+
+            .btn-gradient-modern:hover {
+                background: linear-gradient(to right, #ee0979, #ff6a00);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+        </style>
+        
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <script>
             document.addEventListener('DOMContentLoaded', () => {
