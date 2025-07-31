@@ -65,41 +65,70 @@ if (!empty($orderDetails)):
 <!-- Thêm CSS để làm đẹp cho phần hiển thị -->
 <style>
     .order-details-container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .order-details-container h2, .order-details-container h3 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 600;
     }
     .order-info p {
         font-size: 16px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        line-height: 1.6;
     }
     .table {
         width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
+        margin-top: 1rem;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
     }
-    .table th, .table td {
-        padding: 12px;
-        text-align: center;
+    .table thead {
+        background-color: #0d6efd;
+        color: #fff;
     }
     .table-striped tbody tr:nth-of-type(odd) {
-        background-color: #f2f2f2;
+        background-color: #f8f9fa;
     }
-    .table-bordered {
-        border: 1px solid #ddd;
+    .table th, .table td {
+        padding: 14px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 15px;
     }
-    .table-bordered th, .table-bordered td {
-        border: 1px solid #ddd;
+    .table img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
     }
     .order-total {
+        text-align: right;
         font-size: 18px;
         font-weight: bold;
-        margin-top: 20px;
+        color: #212529;
+        margin-top: 1rem;
     }
-    .order-details-container hr {
-        margin: 20px 0;
+    .alert-warning {
+        background-color: #fff3cd;
+        color: #856404;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: 500;
+        text-align: center;
+    }
+    hr {
+        border: none;
+        border-top: 1px solid #dee2e6;
+        margin: 30px 0;
     }
 </style>
+
