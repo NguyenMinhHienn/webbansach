@@ -14,184 +14,213 @@
 
   <!-- <link rel="stylesheet" href="./assets/css/thongtin.css"> -->
   <style>
-    .hidden {
-      display: none;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;600&display=swap');
 
-    .order-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 12px;
-      background-color: #f9f9f9;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+body {
+  font-family: 'Literata', serif;
+  background-color: #fef8f1;
+  color: #333;
+}
 
-    .order-image {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 16px;
-    }
+.hidden {
+  display: none;
+}
 
-    .order-info {
-      flex: 1;
-      margin-right: 16px;
-    }
+.order-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0d4c3;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  background: linear-gradient(145deg, #fffaf4, #f6eee6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .order-title {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 450px;
-    }
+.order-card:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
 
-    .order-status {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
+.order-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+  border: 2px solid #4de3eeff;
+}
 
-    .order-quantity {
-      font-size: 14px;
-      color: #555;
-    }
+.order-info {
+  flex: 1;
+  margin-right: 16px;
+}
 
-    .order-btn {
-      font-size: 14px;
-      padding: 8px 12px;
-      border-radius: 4px;
-    }
+.order-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #4a2e14;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
 
-    .overlay {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-    }
+.order-status {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 6px;
+}
 
-    .main-container {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      width: 500px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 0.3s ease-in-out;
-    }
+.order-quantity {
+  font-size: 15px;
+  color: #555;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+.order-btn {
+  font-size: 15px;
+  padding: 8px 14px;
+  background-color: rgba(78, 140, 233, 1);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
 
-    .form-container h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-      text-align: center;
-    }
+.order-btn:hover {
+  background-color: #d48820;
+  transform: scale(1.05);
+}
 
-    .rating {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0;
-      direction: rtl;
-    }
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
 
-    .rating input {
-      display: none;
-    }
+.main-container {
+  background-color: #fffdf9;
+  padding: 32px;
+  border-radius: 16px;
+  width: 520px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
 
-    .rating label {
-      font-size: 30px;
-      color: #ccc;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-    .rating input:checked ~ label,
-    .rating label:hover,
-    .rating label:hover ~ label {
-      color: #f5a623;
-    }
+.form-container h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #4a2e14;
+  text-align: center;
+}
 
-    textarea {
-      width: 100%;
-      height: 100px;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+.rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  direction: rtl;
+}
 
-    textarea:focus {
-      outline: none;
-      border-color: #f5a623;
-    }
+.rating input {
+  display: none;
+}
 
-    .form-actions {
-      display: flex;
-      justify-content: space-between;
-    }
+.rating label {
+  font-size: 32px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-    .form-actions button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5a623;
+}
 
-    .form-actions button[type="button"] {
-      background-color: #ddd;
-      color: #333;
-    }
+textarea {
+  width: 100%;
+  height: 110px;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #d9c8b4;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fffaf4;
+  resize: vertical;
+}
 
-    .form-actions button[type="button"]:hover {
-      background-color: #bbb;
-    }
+textarea:focus {
+  outline: none;
+  border-color: #f5a623;
+  box-shadow: 0 0 5px rgba(245, 166, 35, 0.3);
+}
 
-    .form-actions button[type="submit"] {
-      background-color: #f5a623;
-      color: #fff;
-    }
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
 
-    .form-actions button[type="submit"]:hover {
-      background-color: #d48820;
-    }
+.form-actions button {
+  padding: 10px 22px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    .review-link {
-      cursor: pointer;
-      color: #f5a623;
-      text-decoration: none;
-      font-size: 18px;
-    }
+.form-actions button[type="button"] {
+  background-color: #e0d4c3;
+  color: #333;
+}
 
-    .review-link:hover {
-      text-decoration: underline;
-    }
+.form-actions button[type="button"]:hover {
+  background-color: #cbbba5;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #61d3f0ff;
+  color: #fff;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: #6faee2ff;
+}
+
+.review-link {
+  cursor: pointer;
+  color: #f5a623;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.review-link:hover {
+  text-decoration: underline;
+  color: #c17317;
+}
+
   </style>
 </head>
 
@@ -312,7 +341,7 @@
 
             <?php if ($groupedOrder['shipping_status'] == 'delivered' && !$hasReviewed): ?>
                 <button class="btn btn-outline-danger btn-sm order-btn">
-                    <a href="javascript:void(0);" onclick="toggleForm()">Đánh giá</a>
+                    <a href="javascript:void(0);" onclick="toggleForm()" style="color: inherit; text-decoration: none;">Đánh giá</a>
                 </button>
                 <div class="overlay" id="reviewOverlay" style="display: none;">
                     <div class="main-container">
