@@ -2,20 +2,17 @@
 class OrderController{
     private $modelOrder;
     private $modelUser;
-    
-    
 
     public function __construct(){
         $this->modelOrder = new Order();
         $this->modelUser = new User();
-
     }
+
     public function views_order() {
-        $orders=$this->modelOrder->getAll();
+        $orders = $this->modelOrder->getAll();
         require_once './views/order/listdonhang.php';
     }
 
-    
     public function views_edit_order() {
         $order = $this->modelOrder->getById($_GET['id']);
         require_once './views/order/editorder.php';
@@ -30,9 +27,7 @@ class OrderController{
             ];
 
             try {
-                
-                 $this->validateOrderUpdate($data);
-                
+                $this->validateOrderUpdate($data);
                 if ($this->modelOrder->updateOrder($data)) {
                     $_SESSION['success'] = "Cập nhật đơn hàng thành công";
                 } else {
@@ -42,13 +37,33 @@ class OrderController{
                 $_SESSION['error'] = $e->getMessage();
             }
         }
-         header('Location: ?act=order');
+        header('Location: ?act=order');
         exit;
     }
-//xử lý cập nhật đơn hàng
+
     // Kiểm tra trạng thái đơn hàng và điều kiện chuyển đổi
     private function validateOrderUpdate($data) {
         $currentOrder = $this->modelOrder->getById($data[':id']);
+
+        
+        $validShippingTransitions = [
+            'processing' => ['delivering'],   // Đang xử lý → Đang giao
+            'delivering' => ['delivered'],    // Đang giao → Đã giao
+            'delivered'  => ['returned'],     // Đã giao → Trả hàng
+            'returned'   => [],               // Trả hàng → Kết thúc
+            'cancelled'  => []                 // Hủy → Kết thúc
+        ];
+
+        if ($data[':shipping_status'] !== $currentOrder['shipping_status']) {
+            if (!isset($validShippingTransitions[$currentOrder['shipping_status']])) {
+                throw new Exception("Trạng thái vận chuyển hiện tại không hợp lệ: {$currentOrder['shipping_status']}");
+            }
+            $allowedNextShipping = $validShippingTransitions[$currentOrder['shipping_status']];
+            if (!in_array($data[':shipping_status'], $allowedNextShipping)) {
+                throw new Exception("Không thể chuyển trạng thái vận chuyển từ {$currentOrder['shipping_status']} sang {$data[':shipping_status']}. Vui lòng cập nhật tuần tự từng bước.");
+            }
+        }
+        // ✅ Hết phần bổ sung
 
         // Kiểm tra trạng thái thanh toán cho các phương thức thanh toán online
         if ($currentOrder['payment_method'] === 'CREDIT' || 
@@ -78,7 +93,7 @@ class OrderController{
 
             // Kiểm tra điều kiện shipping_status
             if ($data[':shipping_status'] !== $currentOrder['shipping_status']) {
-                 if ($currentOrder['payment_status'] === 'failed' || $currentOrder['payment_status'] === 'unpaid') {
+                if ($currentOrder['payment_status'] === 'failed' || $currentOrder['payment_status'] === 'unpaid') {
                     if ($data[':shipping_status'] !== 'cancelled') {
                         throw new Exception("Không thể thay đổi trạng thái đơn hàng khi thanh toán chưa thành công");
                     }
@@ -146,26 +161,19 @@ class OrderController{
     public function views_order_detail() {
         $id = $_GET['id'] ?? null;
         if (!$id) {
-            $_SESSION['error'] = "Không tìm thấy đơn hàng ";
-            header('Location: ?act=order');
-            exit;
+            $_SESSION['error'] = "Không tìm thấy đơn hàng";
+            return;
         }
 
         $order = $this->modelOrder->getOrderThongTinKhachHang($id);
-        
         $detailsp = $this->modelOrder->getOrderDetailsThongTin($id);
-        
-        
+
         if (!$order || !$detailsp) {
             $_SESSION['error'] = "Không tìm thấy thông tin đơn hàng id";
-            header('Location: ?act=order');
-            exit;
+            return;
         }
-        
+
         require_once './views/order/chitietdh.php';
     }
-
-    
-
 }
 ?>
