@@ -49,9 +49,10 @@
                                         <label>Trạng thái thanh toán</label>
                                         <select class="form-control" name="payment_status">
                                             <option value="unpaid" <?php echo $order['payment_status'] == 'unpaid' ? 'selected' : ''; ?>>Chưa thanh toán</option>
+                                            <option value="processing" <?php echo $order['payment_status'] == 'processing' ? 'selected' : ''; ?>>Đang xử lý</option>
                                             <option value="paid" <?php echo $order['payment_status'] == 'paid' ? 'selected' : ''; ?>>Đã thanh toán</option>
                                             <option value="failed" <?php echo $order['payment_status'] == 'failed' ? 'selected' : ''; ?>>Thất bại</option>
-                                            <option value="processing" <?php echo $order['payment_status'] == 'processing' ? 'selected' : ''; ?>>Đang xử lý</option>
+                                            <option value="refunded" <?php echo $order['payment_status'] == 'refunded' ? 'selected' : ''; ?>>Đã hoàn tiền</option>
                                         </select>
                                     </div>
 
@@ -59,9 +60,10 @@
                                     <div class="form-group">
                                         <label>Trạng thái vận chuyển</label>
                                         <select class="form-control" name="shipping_status">
-                                            <option value="pending" <?php echo $order['shipping_status'] == 'pending' ? 'selected' : ''; ?>>Đang xử lý</option>
+                                            <option value="pending" <?php echo $order['shipping_status'] == 'pending' ? 'selected' : ''; ?>>Chờ xử lý</option>
                                             <option value="delivering" <?php echo $order['shipping_status'] == 'delivering' ? 'selected' : ''; ?>>Đang giao hàng</option>
                                             <option value="delivered" <?php echo $order['shipping_status'] == 'delivered' ? 'selected' : ''; ?>>Đã giao hàng</option>
+                                            <option value="returned" <?php echo $order['shipping_status'] == 'returned' ? 'selected' : ''; ?>>Trả hàng</option>
                                             <option value="cancelled" <?php echo $order['shipping_status'] == 'cancelled' ? 'selected' : ''; ?>>Đã hủy</option>
                                         </select>
                                     </div>

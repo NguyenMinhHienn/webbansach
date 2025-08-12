@@ -47,11 +47,11 @@ class OrderController{
 
         
         $validShippingTransitions = [
-            'processing' => ['delivering'],   // Đang xử lý → Đang giao
-            'delivering' => ['delivered'],    // Đang giao → Đã giao
-            'delivered'  => ['returned'],     // Đã giao → Trả hàng
-            'returned'   => [],               // Trả hàng → Kết thúc
-            'cancelled'  => []                 // Hủy → Kết thúc
+            'pending' => ['delivering', 'cancelled'],  // Chờ xử lý → Đang giao hoặc Hủy
+            'delivering' => ['delivered', 'cancelled'], // Đang giao → Đã giao hoặc Hủy
+            'delivered'  => ['returned'],              // Đã giao → Trả hàng
+            'returned'   => [],                        // Trả hàng → Kết thúc
+            'cancelled'  => []                         // Hủy → Kết thúc
         ];
 
         if ($data[':shipping_status'] !== $currentOrder['shipping_status']) {
@@ -93,15 +93,22 @@ class OrderController{
 
             // Kiểm tra điều kiện shipping_status
             if ($data[':shipping_status'] !== $currentOrder['shipping_status']) {
+                // Chỉ cho phép hủy đơn hàng khi thanh toán thất bại hoặc chưa thanh toán
                 if ($currentOrder['payment_status'] === 'failed' || $currentOrder['payment_status'] === 'unpaid') {
                     if ($data[':shipping_status'] !== 'cancelled') {
                         throw new Exception("Không thể thay đổi trạng thái đơn hàng khi thanh toán chưa thành công");
                     }
                 }
-                
-                if ($currentOrder['payment_status'] !== 'paid' && 
-                    $data[':shipping_status'] !== 'cancelled') {
-                    throw new Exception("Trạng thái đơn hàng chỉ có thể thay đổi sau khi đã thanh toán thành công");
+
+                // Cho phép chuyển từ pending -> delivering khi payment_status là processing hoặc paid
+                // Chỉ yêu cầu paid khi chuyển sang delivered
+                if ($data[':shipping_status'] === 'delivered' && $currentOrder['payment_status'] !== 'paid') {
+                    throw new Exception("Chỉ có thể đánh dấu đã giao hàng khi đã thanh toán thành công");
+                }
+
+                // Không cho phép thay đổi shipping_status khác ngoài cancelled khi payment_status là failed
+                if ($currentOrder['payment_status'] === 'failed' && $data[':shipping_status'] !== 'cancelled') {
+                    throw new Exception("Không thể thay đổi trạng thái giao hàng khi thanh toán thất bại");
                 }
             }
         }
