@@ -24,20 +24,22 @@
 
 ## 📁 Cấu Trúc Thư Mục
 
-/root
-├── index.php # Trang chính
-├── /views # Giao diện người dùng
-├── /controllers # Xử lý logic
-├── /models # Kết nối và truy xuất dữ liệu
-├── /admin # Trang quản trị
-└── /assets # CSS, JS, hình ảnh
+- /root
+- ├── index.php # Trang chính
+- ├── /views # Giao diện người dùng
+- ├── /controllers # Xử lý logic
+- ├── /models # Kết nối và truy xuất dữ liệu
+- ├── /admin # Trang quản trị
+- └── /assets # CSS, JS, hình ảnh
 
 ## 👨‍💻 Tác Giả
 
-Nguyễn Minh Hiển
-Email:
+- Họ và tên: Nguyễn Minh Hiển
+
+- Email:
     - github: hiendaika2905@gmail.com
     - mail sinh vien: hiennmph50241@gmail.com
+
 
 
 
