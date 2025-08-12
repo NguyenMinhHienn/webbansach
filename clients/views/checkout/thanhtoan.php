@@ -361,8 +361,8 @@
                                                     <h5 class="mb-0">MB Bank</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0989315010</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> MB Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="mb-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('mb-content')">
@@ -380,8 +380,8 @@
                                                     <h5 class="mb-0">Vietcombank</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 1234567890</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> VCB Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="vcb-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('vcb-content')">
@@ -400,8 +400,8 @@
                                                     <h5 class="mb-0">Techcombank</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0989315010</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> TCB Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="tcb-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('tcb-content')">
@@ -419,8 +419,8 @@
                                                     <h5 class="mb-0">Vietinbank</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0989315010</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> VTB Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="vtb-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('vtb-content')">
@@ -438,8 +438,8 @@
                                                     <h5 class="mb-0">BIDV</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0989315010</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> BIDV Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="bidv-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('bidv-content')">
@@ -456,8 +456,8 @@
                                                     <h5 class="mb-0">ACB</h5>
                                                 </div>
                                                 <div class="account-details">
-                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0989315010</p>
-                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                    <p class="mb-2"><strong>Số tài khoản:</strong> 0327827761</p>
+                                                    <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                     <p class="mb-2"><strong>Chi nhánh:</strong> ACB Hà Nội</p>
                                                     <p class="mb-2"><strong>Nội dung:</strong> <span id="acb-content">DH<?= time() ?></span></p>
                                                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('acb-content')">
@@ -485,8 +485,8 @@
                                                 <img src="./clients/assets/img/paymomo.jpg" alt="MoMo QR" class="img-fluid" style="max-width: 200px;">
                                             </div>
                                             <div class="account-details text-start">
-                                                <p class="mb-2"><strong>Số điện thoại:</strong> 0989315010</p>
-                                                <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN TIEN THINH</p>
+                                                <p class="mb-2"><strong>Số điện thoại:</strong> 0327827761</p>
+                                                <p class="mb-2"><strong>Chủ tài khoản:</strong> NGUYEN MINH HIEN</p>
                                                 <p class="mb-2"><strong>Số tiền:</strong> 
                                                     <?php
                                                     if (isset($_SESSION['buy_now_item'])) {
