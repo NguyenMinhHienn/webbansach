@@ -63,6 +63,7 @@ class OrderController{
                 throw new Exception("Không thể chuyển trạng thái vận chuyển từ {$currentOrder['shipping_status']} sang {$data[':shipping_status']}. Vui lòng cập nhật tuần tự từng bước.");
             }
         }
+        
         // ✅ Hết phần bổ sung
 
         // Kiểm tra trạng thái thanh toán cho các phương thức thanh toán online
