@@ -99,7 +99,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="4" class="text-right"><strong>Tổng tiền:</strong></td>
-                                <td class="text-right" id="cart-total"><strong>0đ</strong></td>
+                                <td class="text-right" id="cart-total"><strong><?= number_format($totalAmount, 0, ',', '.') ?>đ</strong></td>
                                 <td></td>
                                 <td></td>
                             </tr>
